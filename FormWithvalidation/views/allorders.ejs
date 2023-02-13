@@ -1,0 +1,34 @@
+<%- include('layouts/header') -%>
+
+<body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Student ID</th>
+          <th>HTML5 Books</th>
+          <th>CSS3 Books</th>
+          <th>Pens</th>
+          <th>Subtotal</th>
+          <th>Tax</th>
+          <th>Total</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let order of orders) { %>
+        <tr>
+          <td><%= order.name %></td>
+          <td><%= order.studentid %></td>
+          <td><%= order.html5books %></td>
+          <td><%= order.css3books %></td>
+          <td><%= order.pens %></td>
+          <td><%= order.subtotal %></td>
+          <td><%= order.afterTax %></td>
+          <td><%= order.total %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+  

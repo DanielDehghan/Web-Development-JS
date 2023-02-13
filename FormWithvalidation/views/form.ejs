@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>My Book store</title>
+</head>
+<body>
+    <%- include('layouts/header') -%>
+    <div id="form1">
+        <form name="myform" method="Post">
+
+            <label for="name"> Name:</label>
+            <input id="name" placeholder=" Name" type="text" name="name"><br/>
+             
+
+            <label for="studentid"> Student ID:</label>
+            <input id="studentid" placeholder=" Student ID" type="text" name="studentid"><br/>
+              
+            <label for="html5books"> HTML5 Books:</label>
+            <input id="html5books" placeholder=" HTML5 Books" type="number" name="html5books"><br/>
+            
+            <label for="css3books"> CSS3 Books:</label>
+            <input id="css3books" placeholder=" CSS3 Books" type="number" name="css3books"><br/>
+            
+            <label for="pens"> Pens:</label>
+            <input id="pens" placeholder=" pens" type="number" name="pens"><br/>
+            
+            <input  type="submit" value="Submit" >
+        </form>
+         
+        <div class="receipt">
+            <div class="errors">
+            <% if(typeof(errors) != 'undefined') { for( var error of errors) { %>
+            <p><%= error.msg %></p>
+            <% } } %>
+        
+            <% if(typeof(name) != 'undefined') { %>
+            </div>
+            <table>
+                <h2>Thank you for your order!</h2>
+                <h3>Here Are your Order Detail:</h3>
+                <tr>
+                  <th>Name:</th>
+                  <td><%= name %></td>
+                </tr>
+                <tr>
+                  <th>Student ID:</th>
+                  <td><%= studentid %></td>
+                </tr>
+                <tr>
+                  <th>Total number of HTML5 Books=</th>
+                  <td><%= html5books %></td>
+                </tr>
+                <tr>
+                  <th>Total number of CSS3 Books=</th>
+                  <td><%= css3books %></td>
+                </tr>
+                <tr>
+                  <th>Total number of Pens =</th>
+                  <td><%= pens %></td>
+                </tr>
+                <th>Subtotal:</th>
+                <td>$<%= subtotal %></td>
+              </tr>
+              <tr>
+                <th>Tax:</th>
+                <td>$<%= afterTax %></td>
+              </tr>
+        
+              <tr>
+                <th>Total Cost:</th>
+                <td>$<%= total %></td>
+              </tr>
+
+           </table>
+            <% } %>
+          </div>
+      
+<footer>
+
+    <p>@Copyright- Danial Takdehghan</p>
+</footer>
+</body>
+
+<style>
+    footer {
+        color:yellow;
+        text-align:center;
+        font-size:16px;
+        
+    }
+</style>
+</html>
